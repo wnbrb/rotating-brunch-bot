@@ -1,3 +1,5 @@
+require 'byebug'
+
 class EstablishMatchesForGroupingJob
   def initialize(config: nil)
     @loads_slack_channels = Slack::LoadsSlackChannels.new
@@ -9,6 +11,7 @@ class EstablishMatchesForGroupingJob
   end
 
   def perform(grouping:)
+    byebug
     channel = channel_for_grouping(grouping)
 
     matches = @matches_participants.call(

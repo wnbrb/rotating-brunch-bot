@@ -10,7 +10,10 @@ module Rakes
 
     def call
       @config.each_pair do |grouping, grouping_config|
-        next unless should_run_today?(grouping_config.schedule)
+        if !should_run_today?(grouping_config.schedule)
+          @stdout.puts "Skipped matchmaking for '#{grouping}' because it should not run today"
+          next
+        end
 
         unless grouping_config.active
           @stdout.puts "Skipping matchmaking for '#{grouping}'"

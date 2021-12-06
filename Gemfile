@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.0"
 
+gem "byebug"
 gem "rails", "~> 6.1.3", ">= 6.1.3.1"
 gem "puma", "~> 5.5"
 gem "slack-ruby-client"
