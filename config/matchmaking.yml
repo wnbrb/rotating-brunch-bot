@@ -2,7 +2,7 @@ default: &default
   coffee_time:
     active: true
     channel: new-virtual-coffee
-    schedule: daily
+    schedule: monthly
     size: 2
   q_branch:
     active: false

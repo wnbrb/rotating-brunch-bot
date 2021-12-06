@@ -1,4 +1,3 @@
-require 'byebug'
 
 class EstablishMatchesForGroupingJob
   def initialize(config: nil)
@@ -11,7 +10,6 @@ class EstablishMatchesForGroupingJob
   end
 
   def perform(grouping:)
-    byebug
     channel = channel_for_grouping(grouping)
 
     matches = @matches_participants.call(
