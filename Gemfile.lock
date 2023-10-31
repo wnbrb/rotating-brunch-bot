@@ -70,6 +70,8 @@ GEM
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     diff-lcs (1.4.4)
+    dockerfile-rails (1.5.1)
+      rails
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
@@ -232,11 +234,13 @@ PLATFORMS
   arm64-darwin-20
   x86_64-darwin-19
   x86_64-darwin-20
+  x86_64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
   bugsnag (~> 6.24)
+  dockerfile-rails (>= 1.5)
   dotenv-rails
   listen (~> 3.3)
   pg (~> 1.2)

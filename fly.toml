@@ -1,0 +1,27 @@
+# fly.toml app configuration file generated for rotating-brunch-bot on 2023-07-19T13:29:38+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "rotating-brunch-bot"
+primary_region = "atl"
+console_command = "/rails/bin/rails console"
+
+[deploy]
+  release_command = "./bin/rails db:prepare"
+
+[processes]
+  app = ""
+  cron = "cron -f"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[statics]]
+  guest_path = "/rails/public"
+  url_prefix = "/"
